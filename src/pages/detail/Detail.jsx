@@ -8,11 +8,13 @@ import {
   IngContainer,
   OtherPart,
 } from "./Detail.style";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import diet from "../../assets/diet.svg";
+import { AiFillBackward } from "react-icons/ai";
 
 const Detail = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
   return (
     <div>
       <DetailContainer>
@@ -22,6 +24,9 @@ const Detail = () => {
         </HeaderContainer>
 
         <DetailPart>
+          <h1>
+            <AiFillBackward onClick={() => navigate(-1)} />
+          </h1>
           <OtherPart>
             <h4>NUTRIENS</h4>
             <p>
